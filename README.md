@@ -20,6 +20,10 @@ The repository covers concepts related to machine learning, deep learning, mathe
 
 Topics are organized into directories as the repository grows. Each topic may include conceptual explanations, mathematical derivations, implementations, visualizations, experiments, and results.
 
+### Deep Learning
+
+- [Perceptron and Gradient Descent](deep-learning/perceptron/README.md) — Mathematical foundations, implementation, and experimental results.
+
 ## Technologies
 
 This repository uses Python and its ecosystem for numerical computation, algorithm implementation, visualization, and experimentation.
