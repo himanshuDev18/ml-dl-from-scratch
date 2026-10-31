@@ -24,6 +24,8 @@ Topics are organized into directories as the repository grows. Each topic may in
 
 - [Perceptron and Gradient Descent](deep-learning/perceptron/README.md) — Mathematical foundations, implementation, and experimental results.
 
+- [General Feedforward Neural Network from Scratch](deep-learning/neural-network-from-scratch/README.md) — Configurable neural network for binary classification using ReLU, Sigmoid, Binary Cross-Entropy, backpropagation, and Batch Gradient Descent.
+
 ## Technologies
 
 This repository uses Python and its ecosystem for numerical computation, algorithm implementation, visualization, and experimentation.
