@@ -51,7 +51,9 @@ For example:
 
 ```python
 [2, 5, 1]
+
 [2, 10, 8, 1]
+
 [2, 16, 8, 4, 1]
 ```
 
@@ -223,8 +225,7 @@ A threshold of `0.5` converts probabilities into class predictions.
 For each layer:
 
 $$
-Z^{[l]} =
-A^{[l-1]}W^{[l]} + b^{[l]}
+Z^{[l]} = A^{[l-1]}W^{[l]} + b^{[l]}
 $$
 
 For hidden layers:
@@ -296,33 +297,25 @@ The calculation starts from the output layer and moves backward through the netw
 For Sigmoid activation combined with Binary Cross-Entropy loss:
 
 $$
-dZ^{[L]}
-=
-\frac{\hat{Y} - Y}{N}
+dZ^{[L]} = \frac{\hat{Y} - Y}{N}
 $$
 
 The output weight gradient is:
 
 $$
-dW^{[L]}
-=
-(A^{[L-1]})^T dZ^{[L]}
+dW^{[L]} = (A^{[L-1]})^T dZ^{[L]}
 $$
 
 The bias gradient is:
 
 $$
-db^{[L]}
-=
-\sum dZ^{[L]}
+db^{[L]} = \sum dZ^{[L]}
 $$
 
 The gradient passed to the previous layer is:
 
 $$
-dA^{[L-1]}
-=
-dZ^{[L]}(W^{[L]})^T
+dA^{[L-1]} = dZ^{[L]}(W^{[L]})^T
 $$
 
 ---
@@ -332,10 +325,7 @@ $$
 For hidden layers:
 
 $$
-dZ^{[l]}
-=
-dA^{[l]}
-\odot ReLU'(Z^{[l]})
+dZ^{[l]} = dA^{[l]} \odot ReLU'(Z^{[l]})
 $$
 
 where $\odot$ represents element-wise multiplication.
@@ -343,25 +333,19 @@ where $\odot$ represents element-wise multiplication.
 The weight gradient is:
 
 $$
-dW^{[l]}
-=
-(A^{[l-1]})^T dZ^{[l]}
+dW^{[l]} = (A^{[l-1]})^T dZ^{[l]}
 $$
 
 The bias gradient is:
 
 $$
-db^{[l]}
-=
-\sum dZ^{[l]}
+db^{[l]} = \sum dZ^{[l]}
 $$
 
 The gradient passed to the previous layer is:
 
 $$
-dA^{[l-1]}
-=
-dZ^{[l]}(W^{[l]})^T
+dA^{[l-1]} = dZ^{[l]}(W^{[l]})^T
 $$
 
 This process is repeated backward through all hidden layers.
@@ -384,15 +368,15 @@ A[l]   : (N, n[l])
 During backpropagation:
 
 ```text
-dZ[l]  : (N, n[l])
+dZ[l]     : (N, n[l])
 
-A[l-1].T : (n[l-1], N)
+A[l-1].T  : (n[l-1], N)
 
-dW[l]  : (n[l-1], n[l])
+dW[l]     : (n[l-1], n[l])
 
-db[l]  : (1, n[l])
+db[l]     : (1, n[l])
 
-dA[l-1] : (N, n[l-1])
+dA[l-1]   : (N, n[l-1])
 ```
 
 ---
@@ -412,19 +396,11 @@ During one epoch:
 The parameter update rule is:
 
 $$
-W^{[l]}
-\leftarrow
-W^{[l]}
--
-\alpha dW^{[l]}
+W^{[l]} \leftarrow W^{[l]} - \alpha dW^{[l]}
 $$
 
 $$
-b^{[l]}
-\leftarrow
-b^{[l]}
--
-\alpha db^{[l]}
+b^{[l]} \leftarrow b^{[l]} - \alpha db^{[l]}
 $$
 
 where $\alpha$ is the learning rate.
